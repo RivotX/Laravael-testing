@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\AnimalesController;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\MiControlador;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,4 +19,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('/pokemon', 'controlador@accion')->name('pokemon');
+
+Route::get('/dameAnimales', [AnimalesController::class, 'getAnimales']);
+
+Route::get('/vistaParaAjax', function () {
+    return view('welcome');
+});
